@@ -13,12 +13,23 @@
         android:theme="@style/Theme.FITData"
         tools:targetApi="31">
         <activity
-            android:name=".LegExtention"
+            android:name=".BSS"
             android:exported="false" />
         <activity
-            android:name=".LegExtension"
-            android:exported="false"
-            android:theme="@style/Theme.FITData" />
+            android:name=".BandedSideLunge"
+            android:exported="false" />
+        <activity
+            android:name=".RDLS"
+            android:exported="false" />
+        <activity
+            android:name=".HackSquats"
+            android:exported="false" />
+        <activity
+            android:name=".BarbellSquats"
+            android:exported="false" />
+        <activity
+            android:name=".LegExtention"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
