@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         loadWorkout(curLibraryIndex);
     }
 
-    public void nextWorkout(int curLibraryIndex) {
+    public void nextWorkout(int index) {
 
         if (curLibraryIndex >= lib.getLibrary().size()-1) {
             curLibraryIndex = 0;
