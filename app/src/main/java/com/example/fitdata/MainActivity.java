@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         workout2.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
         workout2.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
 
-        Workout workout3 = new Workout("Hello Day", "Monday, Wednesday");
+        Workout workout3 = new Workout("Hello Day", "Monday, Tuesday, Wednesday");
         workout3.addExercise(new Exercise("Arm Curls", "Put weight on your shoulders and bring your butt down", "Medium", "img", 4, 10));
         workout3.addExercise(new Exercise("Triceps", "Step forward and lower your body", "Hard", "img", 3, 12));
         workout3.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
