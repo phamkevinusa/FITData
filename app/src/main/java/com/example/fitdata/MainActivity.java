@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //for testing purposes
-        Workout workout1 = new Workout("Leg Day", "Monday, Wednesday");
+        Workout workout1 = new Workout("Leg Day", "Monday, Wednesday, Friday");
         workout1.addExercise(new Exercise("Squats", "Put weight on your shoulders and bring your butt down", "Medium", "img", 4, 10));
         workout1.addExercise(new Exercise("Lunges", "Step forward and lower your body", "Hard", "img", 3, 12));
         workout1.addExercise(new Exercise("hey", "Step forward and lower your body", "easy", "img", 3, 12));
