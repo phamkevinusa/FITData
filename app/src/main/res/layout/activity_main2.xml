@@ -89,7 +89,7 @@
         app:srcCompat="@drawable/user_icon_fit_data" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
