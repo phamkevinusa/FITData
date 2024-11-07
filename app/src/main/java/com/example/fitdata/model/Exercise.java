@@ -43,6 +43,7 @@ public class Exercise {
         return this.repetitions;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }

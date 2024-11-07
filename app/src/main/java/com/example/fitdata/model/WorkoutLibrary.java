@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class WorkoutLibrary {
 
     private String name;
-    private ArrayList<Workout> workoutLibray;
+    private ArrayList<Workout> workoutLibrary;
 
     public WorkoutLibrary (String Name) {
         this.name = name;
-        workoutLibray = new ArrayList<Workout>();
+        workoutLibrary = new ArrayList<Workout>();
     }
 
     public void addWorkout(Workout workout) {
-        workoutLibray.add(workout);
+        workoutLibrary.add(workout);
     }
 
     public ArrayList<Workout> getLibrary() {
-        return workoutLibray;
+        return workoutLibrary;
     }
 
     public void setName(String name) {
