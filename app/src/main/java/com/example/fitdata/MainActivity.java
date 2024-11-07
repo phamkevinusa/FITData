@@ -179,7 +179,15 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Show a toast when the button is clicked
-                    Toast.makeText(v.getContext(), "It works: " + exercise.getName(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, ExerciseDescription.class);
+
+                    // Passing Exercise data to ExerciseDescription
+
+                    intent.putExtra("exerciseName", exercise.getName());
+                    intent.putExtra("exerciseDifficulty", exercise.getDifficulty());
+                    intent.putExtra("exerciseDescription", exercise.getDescription());
+
+                    startActivity(intent);
                 }
             });
         }
