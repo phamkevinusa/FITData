@@ -1,5 +1,9 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+<<<<<<< HEAD
+=======
+    <inspection_tool class="AndroidLintUnsafeImplicitIntentLaunch" enabled="false" level="ERROR" enabled_by_default="false" />
+>>>>>>> b9d258a23fa9f27754c9554b4cd16d2705368d71
   </profile>
 </component>
