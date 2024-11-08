@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class loginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
@@ -21,7 +21,7 @@ public class loginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.login_activity);
 
         // Initialize views
         usernameEditText = findViewById(R.id.editTextUsername);
@@ -37,12 +37,12 @@ public class loginActivity extends AppCompatActivity {
 
                 if (isUserValid(username, password)) {
                     // If credentials match, go to MainActivity
-                    Intent intent = new Intent(loginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, WorkoutActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
                     // Show toast for incorrect credentials
-                    Toast.makeText(loginActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
