@@ -192,4 +192,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+    // make the login button work and move to the next activity_main.xml screen
+    // when the app opens, it needs to go to the login screen
 }
