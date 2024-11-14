@@ -10,16 +10,17 @@
 
     <TextView
         android:id="@+id/exerciseName"
-        android:layout_width="136dp"
-        android:layout_height="52dp"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
         android:text="Name"
         android:textColor="@color/white"
-        android:textSize="40dp"
+        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <Button
         android:id="@+id/backButton"
@@ -35,29 +36,45 @@
 
     <TextView
         android:id="@+id/exerciseDifficulty"
-        android:layout_width="386dp"
-        android:layout_height="43dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
         android:text="Difficulty: "
-        android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.171" />
 
     <TextView
         android:id="@+id/exerciseDescription"
         android:layout_width="383dp"
         android:layout_height="467dp"
-        android:text="Description: "
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.715" />
+
+    <TextView
+        android:id="@+id/reps"
+        android:layout_width="288dp"
+        android:layout_height="30dp"
+        android:text="Hello"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.226" />
 </androidx.constraintlayout.widget.ConstraintLayout>

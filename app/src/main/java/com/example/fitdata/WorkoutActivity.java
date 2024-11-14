@@ -3,15 +3,12 @@ package com.example.fitdata;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +22,7 @@ import com.example.fitdata.model.WorkoutLibrary;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class WorkoutActivity extends AppCompatActivity {
 
     private WorkoutLibrary lib;
     int curLibraryIndex = 0;
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.workout_activity);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -94,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-// figure out the prev and the next button ----------------------------------------------------------------
     public void prevWorkout(int index) {
 
         if (curLibraryIndex <= 0) {
@@ -179,13 +175,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Show a toast when the button is clicked
-                    Intent intent = new Intent(MainActivity.this, ExerciseDescription.class);
+                    Intent intent = new Intent(WorkoutActivity.this, ExerciseDescription.class);
 
                     // Passing Exercise data to ExerciseDescription
 
                     intent.putExtra("exerciseName", exercise.getName());
                     intent.putExtra("exerciseDifficulty", exercise.getDifficulty());
                     intent.putExtra("exerciseDescription", exercise.getDescription());
+                    intent.putExtra("exerciseSets", exercise.getSets());
+                    intent.putExtra("exerciseReps", exercise.getRepetitions());
+
 
                     startActivity(intent);
                 }
