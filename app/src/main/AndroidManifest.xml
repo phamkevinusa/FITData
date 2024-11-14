@@ -15,28 +15,10 @@
         <activity
             android:name=".ExerciseDescription"
             android:exported="false" />
-        <activity
-            android:name=".BSS"
-            android:exported="false" />
-        <activity
-            android:name=".BandedSideLunge"
-            android:exported="false" />
-        <activity
-            android:name=".RDLS"
-            android:exported="false" />
-        <activity
-            android:name=".HackSquats"
-            android:exported="false" />
-        <activity
-            android:name=".BarbellSquats"
-            android:exported="false" />
-        <activity
-            android:name=".LegExtention"
-            android:exported="false" />
-        <activity android:name=".MainActivity"
+        <activity android:name=".WorkoutActivity"
             android:exported="true" />
         <activity
-            android:name=".loginActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
