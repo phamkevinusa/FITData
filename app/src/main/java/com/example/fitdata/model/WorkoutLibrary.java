@@ -7,7 +7,7 @@ public class WorkoutLibrary {
     private String name;
     private ArrayList<Workout> workoutLibrary;
 
-    public WorkoutLibrary (String Name) {
+    public WorkoutLibrary (String name) {
         this.name = name;
         workoutLibrary = new ArrayList<Workout>();
     }
@@ -24,7 +24,7 @@ public class WorkoutLibrary {
         this.name = name;
     }
 
-    public String getName(String name) {
+    public String getName() {
         return this.name;
     }
 }
