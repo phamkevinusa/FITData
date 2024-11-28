@@ -2,7 +2,6 @@ package com.example.fitdata;
 
 import android.content.Intent;
 import androidx.core.content.ContextCompat;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Sets the correct layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
 
@@ -35,9 +35,8 @@ public class ProfileActivity extends AppCompatActivity {
         String experienceLevel = sharedPreferences.getString("experienceLevel", "None");
         String muscleGroup = sharedPreferences.getString("muscleGroup", "None");
 
-
+        // Set button colors based on experience level
         Button button2 = findViewById(R.id.button2);
-
         if ("Beginner".equalsIgnoreCase(experienceLevel)) {
             button2.setBackgroundColor(ContextCompat.getColor(this, R.color.green));
         } else if ("Intermediate".equalsIgnoreCase(experienceLevel)) {
@@ -48,8 +47,8 @@ public class ProfileActivity extends AppCompatActivity {
             button2.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
         }
 
+        // Set button colors based on muscle group
         Button button6 = findViewById(R.id.button6);
-
         if ("Arms".equalsIgnoreCase(muscleGroup)) {
             button6.setBackgroundColor(ContextCompat.getColor(this, R.color.teal_700));
         } else if ("Lower Chest".equalsIgnoreCase(muscleGroup)) {
@@ -69,11 +68,9 @@ public class ProfileActivity extends AppCompatActivity {
         tvExperienceLevel.setText(experienceLevel);
         tvMuscleGroup.setText(muscleGroup);
 
-
+        // Set click listeners for databaseView and settingsView to navigate through screens
         ImageView databaseView = findViewById(R.id.databaseView);
         ImageView settingsView = findViewById(R.id.settingsView);
-
-
         databaseView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
