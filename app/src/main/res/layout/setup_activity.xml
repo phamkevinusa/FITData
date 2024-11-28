@@ -227,7 +227,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp"
         android:hint="Enter your height"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/welcomeView9"
         app:layout_constraintEnd_toEndOf="parent"
