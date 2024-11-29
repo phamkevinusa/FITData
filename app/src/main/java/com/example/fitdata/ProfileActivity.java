@@ -50,12 +50,12 @@ public class ProfileActivity extends AppCompatActivity {
         // Set button colors based on muscle group
         Button button6 = findViewById(R.id.button6);
         if ("Arms".equalsIgnoreCase(muscleGroup)) {
-            button6.setBackgroundColor(ContextCompat.getColor(this, R.color.teal_700));
-        } else if ("Lower Chest".equalsIgnoreCase(muscleGroup)) {
-            button6.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500));
-        } else if ("Upper Chest".equalsIgnoreCase(muscleGroup)) {
             button6.setBackgroundColor(ContextCompat.getColor(this, R.color.teal_200));
-        } else if ("Legs".equalsIgnoreCase(muscleGroup)) {
+        } else if ("Lower Body".equalsIgnoreCase(muscleGroup)) {
+            button6.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500));
+        } else if ("Upper Body".equalsIgnoreCase(muscleGroup)) {
+            button6.setBackgroundColor(ContextCompat.getColor(this, R.color.teal_700));
+        } else if ("All".equalsIgnoreCase(muscleGroup)) {
             button6.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_200));
         } else {
             button6.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
@@ -76,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Start the target activity (replace 'AnotherActivity' with the actual one)
                 Intent intent = new Intent(ProfileActivity.this, WorkoutActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent); // Start the activity
             }
         });

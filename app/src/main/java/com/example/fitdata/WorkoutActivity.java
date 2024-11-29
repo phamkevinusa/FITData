@@ -51,6 +51,14 @@ public class WorkoutActivity extends AppCompatActivity {
             Log.v(TAG, "next Index: " + curLibraryIndex);
         });
 
+        //Trying to make functionality of profile button redirecting to the profile activity - Americo
+        ImageView imageViewArms = findViewById(R.id.imageView2);
+        imageViewArms.setOnClickListener(v -> {
+            Intent intent = new Intent(WorkoutActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+
         // Fetch workouts
         requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
 

@@ -55,23 +55,23 @@ public class SetupActivity extends AppCompatActivity {
 
         // Handle muscle group selection
         upperChestButton.setOnClickListener(v -> {
-            muscleGroup = "Upper Chest";
-            Toast.makeText(this, "Upper Chest Selected", Toast.LENGTH_SHORT).show();
-        });
-
-        lowerChestButton.setOnClickListener(v -> {
-            muscleGroup = "Lower Chest";
-            Toast.makeText(this, "Lower Chest Selected", Toast.LENGTH_SHORT).show();
-        });
-
-        armsButton.setOnClickListener(v -> {
             muscleGroup = "Arms";
             Toast.makeText(this, "Arms Selected", Toast.LENGTH_SHORT).show();
         });
 
+        lowerChestButton.setOnClickListener(v -> {
+            muscleGroup = "Lower Body";
+            Toast.makeText(this, "Lower Body Selected", Toast.LENGTH_SHORT).show();
+        });
+
+        armsButton.setOnClickListener(v -> {
+            muscleGroup = "Upper Body";
+            Toast.makeText(this, "Upper Body Selected", Toast.LENGTH_SHORT).show();
+        });
+
         legsButton.setOnClickListener(v -> {
-            muscleGroup = "Legs";
-            Toast.makeText(this, "Legs Selected", Toast.LENGTH_SHORT).show();
+            muscleGroup = "All";
+            Toast.makeText(this, "All Selected", Toast.LENGTH_SHORT).show();
         });
 
         backView.setOnClickListener(v -> {
