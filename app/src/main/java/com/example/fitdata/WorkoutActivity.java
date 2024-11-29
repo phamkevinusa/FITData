@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -88,6 +89,12 @@ public class WorkoutActivity extends AppCompatActivity {
             }
         });
 
+        //Trying to make functionality of profile button redirecting to the profile activity - Americo
+        ImageView imageViewArms = findViewById(R.id.imageView2);
+        imageViewArms.setOnClickListener(v -> {
+            Intent intent = new Intent(WorkoutActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
     }
 
 
