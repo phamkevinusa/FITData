@@ -14,9 +14,6 @@ public class Workout {
         Exercises = new ArrayList<Exercise>();
     }
 
-//    public void addExercise(Exercise exercise) {
-//        Exercises.add(exercise);
-//    }
 
     public void addExercise(Exercise exercise) {
         Exercises.add(exercise);

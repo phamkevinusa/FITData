@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/exerciseName"
-        android:layout_width="108dp"
-        android:layout_height="49dp"
+        android:layout_width="299dp"
+        android:layout_height="44dp"
         android:text="Name"
         android:textColor="@color/white"
         android:textSize="35dp"

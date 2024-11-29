@@ -32,7 +32,7 @@ public class ExerciseDescription extends AppCompatActivity {
 
         // Retrieving data from Intent
         String exerciseName = getIntent().getStringExtra("exerciseName");
-        String exerciseDifficulty = getIntent().getStringExtra("exerciseDifficulty");
+        int exerciseDifficulty = getIntent().getIntExtra("exerciseDifficulty", 1);
         String exerciseDescription = getIntent().getStringExtra("exerciseDescription");
         int exerciseReps = getIntent().getIntExtra("exerciseReps", 1);
         int exerciseSets = getIntent().getIntExtra("exerciseSets", 1);
@@ -41,7 +41,7 @@ public class ExerciseDescription extends AppCompatActivity {
         TextView name = findViewById(R.id.exerciseName);
 
         TextView difficulty = findViewById(R.id.exerciseDifficulty);
-        difficulty.setText(exerciseDifficulty);
+        difficulty.setText(String.valueOf(exerciseDifficulty));
 
         TextView description = findViewById(R.id.exerciseDescription);
         description.setText(exerciseDescription);
@@ -53,20 +53,24 @@ public class ExerciseDescription extends AppCompatActivity {
         if (exerciseName != null){
             name.setText(exerciseName);
         }
-        if (exerciseDifficulty != null){
-            difficulty.setText(exerciseDifficulty);
+        if (exerciseDifficulty !=  0){
 
-            if (exerciseDifficulty.equalsIgnoreCase("hard")) {
+            if (exerciseDifficulty >= 8) {
 
                 difficulty.setBackgroundColor(Color.parseColor("#c30010"));
+                difficulty.setText("HARD");
 
-            } else if (exerciseDifficulty.equalsIgnoreCase("medium")) {
+            } else if (exerciseDifficulty >= 4) {
 
                 difficulty.setBackgroundColor(Color.parseColor("#FEE12B"));
+                difficulty.setText("MEDIUM");
 
-            } else if (exerciseDifficulty.equalsIgnoreCase("easy")){
+
+            } else if (exerciseDifficulty >= 1){
 
                 difficulty.setBackgroundColor(Color.parseColor("#008000"));
+                difficulty.setText("EASY");
+
 
             }
         }
@@ -77,8 +81,7 @@ public class ExerciseDescription extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ExerciseDescription.this, WorkoutActivity.class));
-
+                  finish();
             }
 
 

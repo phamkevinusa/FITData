@@ -4,13 +4,13 @@ public class Exercise {
 
     private String name;
     private String description;
-    private String difficulty;
+    private int difficulty;
     private String img;
     private int sets;
     private int repetitions;
 
 
-    public Exercise (String name, String description, String difficulty, String img, int sets, int repetitions) {
+    public Exercise (String name, String description, int difficulty, String img, int sets, int repetitions) {
         this.name = name;
         this.description = description;
         this.difficulty = difficulty;
@@ -27,7 +27,7 @@ public class Exercise {
         return this.description;
     }
 
-    public String getDifficulty() {
+    public int getDifficulty() {
         return this.difficulty;
     }
 
