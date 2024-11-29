@@ -10,8 +10,14 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
+/**
+ * This class is responsible for displaying the profile activity.
+ *
+ * @author Americo Silva
+ */
 public class ProfileActivity extends AppCompatActivity {
 
+    // Declaring variables for text views
     private TextView tvHeight, tvWeight, tvIdealWeight, tvExperienceLevel, tvMuscleGroup;
 
     @Override
@@ -63,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Update UI with retrieved data
         tvHeight.setText(height);
-        tvWeight.setText(weight+"Lbs");
+        tvWeight.setText(weight + "Lbs");
         tvIdealWeight.setText(idealWeight + "Lbs");
         tvExperienceLevel.setText(experienceLevel);
         tvMuscleGroup.setText(muscleGroup);
@@ -74,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
         databaseView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the target activity (replace 'AnotherActivity' with the actual one)
+                // Start the target activity
                 Intent intent = new Intent(ProfileActivity.this, WorkoutActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent); // Start the activity
@@ -83,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
         settingsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start the target activity (replace 'AnotherActivity' with the actual one)
+                // Start the target activity
                 Intent intent = new Intent(ProfileActivity.this, SetupActivity.class);
                 startActivity(intent); // Start the activity
             }

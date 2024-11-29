@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * This class is responsible for handling the setup activity.
+ */
 public class SetupActivity extends AppCompatActivity {
 
     private EditText etHeight, etWeight, etIdealWeight;
