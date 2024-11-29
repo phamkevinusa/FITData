@@ -13,10 +13,8 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fitdata.controller.RequestController;
 import com.example.fitdata.model.Exercise;
 import com.example.fitdata.model.Workout;
 import com.example.fitdata.model.WorkoutLibrary;
@@ -25,108 +23,44 @@ import java.util.ArrayList;
 
 public class WorkoutActivity extends AppCompatActivity {
 
+
     private WorkoutLibrary lib;
     int curLibraryIndex = 0;
+    private RequestController requestController;  // Declare RequestController
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //for testing purposes
-        Workout workout1 = new Workout("Leg Day", "Monday, Wednesday, Friday");
-        workout1.addExercise(new Exercise("Squats", "Put weight on your shoulders and bring your butt down", "Medium", "img", 4, 10));
-        workout1.addExercise(new Exercise("Lunges", "Step forward and lower your body", "Hard", "img", 3, 12));
-        workout1.addExercise(new Exercise("hey", "Step forward and lower your body", "easy", "img", 3, 12));
-
-        Workout workout2 = new Workout("Arm Day", "Monday, Wednesday");
-        workout2.addExercise(new Exercise("Arm Curls", "Put weight on your shoulders and bring your butt down", "Medium", "img", 4, 10));
-        workout2.addExercise(new Exercise("Triceps", "Step forward and lower your body", "Hard", "img", 3, 12));
-        workout2.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
-        workout2.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
-
-        Workout workout3 = new Workout("Hello Day", "Monday, Tuesday, Wednesday");
-        workout3.addExercise(new Exercise("Arm Curls", "Put weight on your shoulders and bring your butt down", "Medium", "img", 4, 10));
-        workout3.addExercise(new Exercise("Triceps", "Step forward and lower your body", "Hard", "img", 3, 12));
-        workout3.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
-        workout3.addExercise(new Exercise("Triceps Dips", "Step forward and lower your body", "easy", "img", 3, 12));
-
-
-        lib = new WorkoutLibrary("Bulking");
-        lib.addWorkout(workout1);
-        lib.addWorkout(workout2);
-        lib.addWorkout(workout3);
-
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.workout_activity);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
 
-           });
-
-        //load the first workout
-        loadWorkout(curLibraryIndex);
+        // Initialize RequestController with the current context
+        requestController = RequestController.getInstance(this);  // Pass context here
 
         Button prev, next;
-
         prev = findViewById(R.id.prevBtn);
         next = findViewById(R.id.nextBtn);
 
-        prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                prevWorkout(curLibraryIndex);
-                String message = "prev Index: " + curLibraryIndex;
-                Log.v(TAG, "prev Index: " + curLibraryIndex);
-            }
+        prev.setOnClickListener(v -> {
+            requestController.prevWorkout();  // Use the controller to handle previous workout
+            Log.v(TAG, "prev Index: " + curLibraryIndex);
         });
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nextWorkout(curLibraryIndex);
-                Log.v(TAG, "next Index: " + curLibraryIndex);
-            }
+        next.setOnClickListener(v -> {
+            requestController.nextWorkout();  // Use the controller to handle next workout
+            Log.v(TAG, "next Index: " + curLibraryIndex);
         });
 
-        //Trying to make functionality of profile button redirecting to the profile activity - Americo
-        ImageView imageViewArms = findViewById(R.id.imageView2);
-        imageViewArms.setOnClickListener(v -> {
-            Intent intent = new Intent(WorkoutActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
+        // Fetch workouts
+        requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
+
     }
 
 
-    public void prevWorkout(int index) {
+    public void loadWorkout(Workout Workout) {
 
-        if (curLibraryIndex <= 0) {
-            curLibraryIndex = lib.getLibrary().size()-1;
-        } else {
-            curLibraryIndex -= 1;
-        }
 
-        loadWorkout(curLibraryIndex);
-    }
-
-    public void nextWorkout(int index) {
-
-        if (curLibraryIndex >= lib.getLibrary().size()-1) {
-            curLibraryIndex = 0;
-        } else {
-            curLibraryIndex += 1;
-        }
-
-        loadWorkout((curLibraryIndex));
-
-    }
-
-    public void loadWorkout(int index) {
-
-        //get the library of all the workouts
-        ArrayList<Workout> Library = lib.getLibrary();
-
-        Workout workout = Library.get(index);
+        Workout workout = Workout;
 
         //get the list of all the exercises of the workout
         ArrayList<Exercise> curWorkout = workout.getWorkout();
@@ -160,15 +94,15 @@ public class WorkoutActivity extends AppCompatActivity {
             btn.setText(exercise.getName());
 
             // Set btn color according to its difficulty.
-            if (exercise.getDifficulty().equalsIgnoreCase("hard")) {
+            if (exercise.getDifficulty() >= 8) {
 
                 btn.setBackgroundResource(R.color.red);
 
-            } else if (exercise.getDifficulty().equalsIgnoreCase("medium")) {
+            } else if (exercise.getDifficulty() >= 4) {
 
                 btn.setBackgroundResource(R.color.yellow);
 
-            } else if (exercise.getDifficulty().equalsIgnoreCase("easy")){
+            } else if (exercise.getDifficulty() >= 1){
 
                 btn.setBackgroundResource(R.color.green);
 
@@ -198,7 +132,4 @@ public class WorkoutActivity extends AppCompatActivity {
             });
         }
     }
-
-    // make the login button work and move to the next activity_main.xml screen
-    // when the app opens, it needs to go to the login screen
 }
