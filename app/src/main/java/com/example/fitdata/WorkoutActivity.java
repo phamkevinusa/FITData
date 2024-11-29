@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -52,6 +53,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
         // Fetch workouts
         requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
+
     }
 
 
