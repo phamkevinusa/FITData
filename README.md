@@ -10,7 +10,7 @@ Right upon cloning the repository and running it through Android Studio, the sof
 
 <img width="314" alt="Screenshot 2024-11-29 at 6 18 32 PM" src="https://github.com/user-attachments/assets/cbcfac01-a395-4ff3-a127-849f2d414586">
 
-In this demo demonstration you must input `admin` for username and `0000` for password to continue with the program.
+In this demo demonstration you must input `admin` for username and `0000` for password to continue with the program. This is due since we were not able to properly implement a user sign up; therefore, the username and login were left hardcoded.
 Proceeding with `Login` you will be able to browse the database with forward and back buttons to cycle workout gruops on the top header, 
 and to explore each exercise for instructions you are able to tap on them for more info.
 
