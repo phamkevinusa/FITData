@@ -74,7 +74,7 @@ public class Workout {
     /**
      * Setter for the days of the workout.
      *
-     * @param days new days of the workout
+     * @param days new days of the work out
      */
     public void setDays( String days) {
         this.days = days;

@@ -17,14 +17,11 @@ import java.io.IOException;
 public class FetchService {
     private static final String TAG = "WorkoutFetchService";
 
-    /**
-     * The URL of the server to fetch workout data from.
-     */
+    // The URL of the server to fetch workout data from.
     private static final String URL = "https://mental-shaylynn-cucumbershavings-af8874e9.koyeb.app/exercises/exercises";
 
-    /**
-     * Callback interface for handling the fetch result.
-     */
+
+    // Callback interface for handling the fetch result.
     public interface FetchCallback {
         void onSuccess(WorkoutLibrary workoutLibrary);
         void onError(String errorMessage);
@@ -41,9 +38,8 @@ public class FetchService {
                 .get()
                 .build();
 
-        /**
-         * Enqueues the request and handles the response.
-         */
+
+        // Enqueues the request and handles the response.
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

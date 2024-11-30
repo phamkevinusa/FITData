@@ -65,7 +65,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
 
         // Fetch workouts from the server using the controller.
-                requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
+        requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
 
     }
 
