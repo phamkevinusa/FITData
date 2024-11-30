@@ -6,6 +6,7 @@ It includes different screens to Log in, View Workouts, Profile and Setup.
 Backend: https://github.com/phamkevinusa/FITData--backend
 
 ## How to run application
+There are no requirements to run the applicaiton. All of the database prerequisites are already set up in the application itself.
 Right upon cloning the repository and running it through Android Studio, the software will boot to this screen:
 
 <img width="314" alt="Screenshot 2024-11-29 at 6 18 32 PM" src="https://github.com/user-attachments/assets/cbcfac01-a395-4ff3-a127-849f2d414586">
