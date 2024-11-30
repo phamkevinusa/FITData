@@ -17,7 +17,7 @@ and to explore each exercise for instructions you are able to tap on them for mo
 <img width="312" alt="Screenshot 2024-11-29 at 6 21 13 PM" src="https://github.com/user-attachments/assets/760b9b60-8e0d-446c-815f-ba3abde2438b">
 <img width="329" alt="Screenshot 2024-11-29 at 6 21 25 PM" src="https://github.com/user-attachments/assets/37bd0219-99e7-4f9b-abab-8508c3f41a28">
 
-And for increased customization you are able to change your `profile` by pressing the user icon at the bottom of the screen to navigate to the `profile` view.
+And for increased customization you are able to change your `profile` by pressing the user icon at the bottom  right of the screen to navigate to the `profile` view.
 Once in the `profile` view you can change your information by tapping the gear icon in the top right which would lead you to the `setup` screen.
 
 <img width="298" alt="Screenshot 2024-11-29 at 6 24 35 PM" src="https://github.com/user-attachments/assets/7849f616-85fc-49da-a9da-137fb4ebfea0">
