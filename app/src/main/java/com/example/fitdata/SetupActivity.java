@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * This class is responsible for handling the setup activity.
+ */
 public class SetupActivity extends AppCompatActivity {
 
     private EditText etHeight, etWeight, etIdealWeight;
@@ -30,10 +32,10 @@ public class SetupActivity extends AppCompatActivity {
         Button intermediateButton = findViewById(R.id.button3);
         Button expertButton = findViewById(R.id.button4);
 
-        Button upperChestButton = findViewById(R.id.button15);
-        Button lowerChestButton = findViewById(R.id.button16);
-        Button armsButton = findViewById(R.id.button17);
-        Button legsButton = findViewById(R.id.button13);
+        Button armsButton = findViewById(R.id.button15);
+        Button lowerBodyButton = findViewById(R.id.button16);
+        Button upperBodyButton = findViewById(R.id.button17);
+        Button allButton = findViewById(R.id.button13);
 
         ImageView backView = findViewById(R.id.backView);
 
@@ -54,22 +56,22 @@ public class SetupActivity extends AppCompatActivity {
         });
 
         // Handle muscle group selection
-        upperChestButton.setOnClickListener(v -> {
+        armsButton.setOnClickListener(v -> {
             muscleGroup = "Arms";
             Toast.makeText(this, "Arms Selected", Toast.LENGTH_SHORT).show();
         });
 
-        lowerChestButton.setOnClickListener(v -> {
+        lowerBodyButton.setOnClickListener(v -> {
             muscleGroup = "Lower Body";
             Toast.makeText(this, "Lower Body Selected", Toast.LENGTH_SHORT).show();
         });
 
-        armsButton.setOnClickListener(v -> {
+        upperBodyButton.setOnClickListener(v -> {
             muscleGroup = "Upper Body";
             Toast.makeText(this, "Upper Body Selected", Toast.LENGTH_SHORT).show();
         });
 
-        legsButton.setOnClickListener(v -> {
+        allButton.setOnClickListener(v -> {
             muscleGroup = "All";
             Toast.makeText(this, "All Selected", Toast.LENGTH_SHORT).show();
         });

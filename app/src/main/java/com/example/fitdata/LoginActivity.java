@@ -9,9 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * This class is responsible for handling the login activity.
+ *
+ * author Carlos Lopez
+ */
 
 public class LoginActivity extends AppCompatActivity {
+    // Declaring variables
+
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;

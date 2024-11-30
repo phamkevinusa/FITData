@@ -1,6 +1,5 @@
 package com.example.fitdata;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +12,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * This class is responsible for displaying the description of an exercise.
+ *
+ * @author Michael Barreto
+ */
 public class ExerciseDescription extends AppCompatActivity {
 
     @Override
@@ -26,6 +30,7 @@ public class ExerciseDescription extends AppCompatActivity {
             return insets;
         });
 
+        // Declaring the back button
         Button back_btn;
 
         back_btn = findViewById(R.id.backButton);
@@ -74,10 +79,12 @@ public class ExerciseDescription extends AppCompatActivity {
 
             }
         }
+        // If description is not null (not set), display it.
         if (exerciseDescription != null){
             description.setText(exerciseDescription);
         }
 
+        // Setting up the back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

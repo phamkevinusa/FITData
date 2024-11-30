@@ -14,19 +14,22 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fitdata.controller.RequestController;
+import com.example.fitdata.controller.WorkoutActivityController;
 import com.example.fitdata.model.Exercise;
 import com.example.fitdata.model.Workout;
 import com.example.fitdata.model.WorkoutLibrary;
 
 import java.util.ArrayList;
 
+/**
+ * This class is responsible for displaying workouts in the WorkoutActivity.
+ * @author Jose Jimenez
+ */
 public class WorkoutActivity extends AppCompatActivity {
-
 
     private WorkoutLibrary lib;
     int curLibraryIndex = 0;
-    private RequestController requestController;  // Declare RequestController
+    private WorkoutActivityController requestController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,13 @@ public class WorkoutActivity extends AppCompatActivity {
         setContentView(R.layout.workout_activity);
 
         // Initialize RequestController with the current context
-        requestController = RequestController.getInstance(this);  // Pass context here
+        requestController = WorkoutActivityController.getInstance(this);  // Pass context here
 
         Button prev, next;
         prev = findViewById(R.id.prevBtn);
         next = findViewById(R.id.nextBtn);
+
+        // Set OnClickListener for the previous and next buttons.
 
         prev.setOnClickListener(v -> {
             requestController.prevWorkout();  // Use the controller to handle previous workout
@@ -51,7 +56,7 @@ public class WorkoutActivity extends AppCompatActivity {
             Log.v(TAG, "next Index: " + curLibraryIndex);
         });
 
-        //Trying to make functionality of profile button redirecting to the profile activity - Americo
+        // Trying to make functionality of profile button redirecting to the profile activity
         ImageView imageViewArms = findViewById(R.id.imageView2);
         imageViewArms.setOnClickListener(v -> {
             Intent intent = new Intent(WorkoutActivity.this, ProfileActivity.class);
@@ -59,12 +64,15 @@ public class WorkoutActivity extends AppCompatActivity {
         });
 
 
-        // Fetch workouts
+        // Fetch workouts from the server using the controller.
         requestController.fetchWorkoutsFromServer();  // Use controller to fetch workouts
 
     }
 
-
+    /**
+     * This function loads the workout into the WorkoutActivity and displays it.
+     * @param Workout a list of exercises that make up the workout
+     */
     public void loadWorkout(Workout Workout) {
 
 
@@ -127,14 +135,13 @@ public class WorkoutActivity extends AppCompatActivity {
                     Intent intent = new Intent(WorkoutActivity.this, ExerciseDescription.class);
 
                     // Passing Exercise data to ExerciseDescription
-
                     intent.putExtra("exerciseName", exercise.getName());
                     intent.putExtra("exerciseDifficulty", exercise.getDifficulty());
                     intent.putExtra("exerciseDescription", exercise.getDescription());
                     intent.putExtra("exerciseSets", exercise.getSets());
                     intent.putExtra("exerciseReps", exercise.getRepetitions());
 
-
+                    // start the activity
                     startActivity(intent);
                 }
             });
