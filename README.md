@@ -1,7 +1,12 @@
 # FitData (Demo)
 ### Features
 FitData is an application developed in Android Studio that contains a library of workouts to browse.
-It includes different screens to Log in, View Workouts, Profile and Setup.
+
+At the current state of the app, the login credentials are hard coded. This is due to the fact that we were not able to implement a database to store and retrieve user login. Addtionally, the Workout are also hard coded due to the fact that we were only able to create a database for the exercises. In database the the exercises' name, description, difficulty are sotred. The source code for the database can be access through the additonal Github link below. We decided to seperate both codes since Kevin decided that it be best to do so to keep repository clean.
+
+Another features that we were not able to implement are the filters. In the user profile setup, the user can set the level of expertise (i.e Beginner, Expert) and the muscle groups he/she wants to focus on. However, at the current state all the exercises of all difficulties and muscle groups are diplayed.
+
+Other than that the different screens: Log in, View Workouts, Profile and Setup, have basic functionality that allow the user to accomplish the purpose of the app.
 
 Backend: https://github.com/phamkevinusa/FITData--backend
 
